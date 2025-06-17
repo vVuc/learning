@@ -22,5 +22,5 @@ public class AgendaEntity extends BaseEntity {
     private String createdBy;
 
     @OneToOne(mappedBy = "agenda")
-    private Sess sessions;
+    private SessionEntity sessions;
 }
