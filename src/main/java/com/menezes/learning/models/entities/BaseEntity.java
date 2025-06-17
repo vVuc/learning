@@ -14,7 +14,7 @@ import jakarta.persistence.PreUpdate;
 public class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     @Column(name = "created_at")
@@ -30,6 +30,6 @@ public class BaseEntity {
 
     @PreUpdate
     public void updatedAt() {
-        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }

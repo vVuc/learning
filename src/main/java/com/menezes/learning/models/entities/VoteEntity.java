@@ -1,5 +1,7 @@
 package com.menezes.learning.models.entities;
 
+import com.menezes.learning.models.enums.VoteTypeEnum;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -7,11 +9,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "votes")
+@Table(name = "VOTES")
 public class VoteEntity extends BaseEntity {
 
     @Column(name = "approval")
-    private boolean approval;
+    private VoteTypeEnum approval;
 
     @ManyToOne
     @JoinColumn(name = "session_id")
@@ -20,4 +22,5 @@ public class VoteEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
 }

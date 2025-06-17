@@ -1,6 +1,6 @@
 package com.menezes.learning.models.enums;
 
-public enum AgendaStatusEnum {
+public enum SessionStatusEnum {
     PENDING,
     APPROVED,
     REJECTED,
