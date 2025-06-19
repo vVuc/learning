@@ -1,6 +1,9 @@
 package com.menezes.learning.models.entities;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
+
+import org.hibernate.annotations.UuidGenerator;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -10,17 +13,24 @@ import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 
+/**
+ * Entidade base
+ * 
+ * Esta classe representa a entidade base para todas as entidades do sistema.
+ * 
+ */
 @MappedSuperclass
 public class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @UuidGenerator
+    private UUID id;
 
-    @Column(name = "created_at")
+    @Column(name = "Created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
+    @Column(name = "Updated_at")
     private LocalDateTime updatedAt;
 
     @PrePersist

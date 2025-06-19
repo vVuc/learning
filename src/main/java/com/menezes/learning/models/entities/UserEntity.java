@@ -9,18 +9,23 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-// TODO: Add a unique constraint to the email column
+/**
+ * Entidade para usuário
+ * 
+ * Esta classe representa um usuário.
+ * 
+ */
 @Entity
 @Table(name = "USERS")
 public class UserEntity extends BaseEntity {
 
-    @Column(name = "name", length = 100)
+    @Column(name = "Name", length = 100)
     private String name;
 
-    @Column(name = "email", unique = true, length = 100)
+    @Column(name = "Email", unique = true, length = 100)
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "Password")
     private String password;
 
     @OneToMany(mappedBy = "USERS", fetch = FetchType.LAZY)

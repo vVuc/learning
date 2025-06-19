@@ -7,14 +7,20 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
+/**
+ * Entidade para pauta
+ * 
+ * Esta classe representa uma pauta.
+ * 
+ */
 @Entity
 @Table(name = "AGENDAS")
 public class AgendaEntity extends BaseEntity {
 
-    @Column(length = 100)
+    @Column(name = "Description", length = 100)
     private String description;
 
-    @Column(length = 50)
+    @Column(name = "Title", length = 50)
     private String title;
 
     @OneToMany
